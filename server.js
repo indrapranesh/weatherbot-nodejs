@@ -5,6 +5,8 @@ const app = express()
 
 const apiKey = 'f3b2ffb736ee760ee123e66ba068c45e';
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +27,6 @@ app.post('/', function (req, res) {
 })
 });
 
-//app.listen(3000, function () {
-  //console.log('Example   app listening on port 3000!')
-//})
+app.listen(port, function () {
+  console.log('Our app is running on http://localhost:'+port);
+})
